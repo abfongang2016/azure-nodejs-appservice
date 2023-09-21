@@ -15,11 +15,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      
+
       - name: Set up Node.js version
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v1
         with:
-          node-version: '16.10' 
+          node-version: '18.x'
 
       - name: npm install, build, and test
         run: |
@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'webapplinuxab'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9C65E90FA4D445F7A3C10CF5F11EE872 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6238DFF6F8694D63A86A1B2B05AD7ADA }}
           package: .
