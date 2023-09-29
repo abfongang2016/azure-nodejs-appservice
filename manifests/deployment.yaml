@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: abks
+  labels:
+    app: abks
+  namespace: namespace-workflow-1695952614644
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: abks
+  template:
+    metadata:
+      labels:
+        app: abks
+    spec:
+      containers:
+        - name: abks
+          image: acrworkflow1695952614644.azurecr.io/image-workflow-1695952614644:latest
+          ports:
+            - containerPort: 8000
